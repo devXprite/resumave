@@ -1,13 +1,13 @@
+import Editor from '@/components/Editor';
 import Tabs from '@/components/Tabs';
 
-const page = ({ searchParams: { tab } }) => {
+const page = ({ searchParams: { tab = 'basic' } }) => {
     return (
         <div className="mt-8 flex gap-10">
-            <div className="w-[28rem] bg-white border-gray-500 aspect-[210/297]">
-                
-            </div>
-            <div className='bg-red-100/0 flex-grow'>
+            <div className="aspect-[210/297] w-[28rem] border-gray-500 bg-white/20"></div>
+            <div className="flex-grow ">
                 <Tabs activeTab={tab} />
+                <Editor tab={tab} />
             </div>
         </div>
     );

@@ -2,14 +2,15 @@ export default {
     basic: {
         name: 'Basic',
         fields: [
-            { name: 'name', label: 'Full Name' },
+            { name: 'name', label: 'Full Name', required: true},
+            { name: 'title', label: 'Your Job Title' },
             { name: 'email', label: 'Email', type: 'email' },
             { name: 'phone', label: 'Phone', type: 'tel' },
             { name: 'address', label: 'Address' },
             { name: 'linkedin', label: 'Linked' },
             { name: 'github', label: 'Github' },
             { name: 'website', label: 'Website' },
-            { name: 'summary', label: 'Summary', type: 'textarea' },
+            { name: 'summary', label: 'Summary', type: 'textarea', span: true, rows:3 },
         ],
     },
 

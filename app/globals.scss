@@ -13,7 +13,7 @@
 
 @layer components {
     .btn {
-        @apply flex cursor-pointer items-center gap-3 rounded-md border border-gray-600 bg-gray-700 px-5 py-1.5 shadow-lg shadow-gray-900/25 hover:brightness-125;
+        @apply flex cursor-pointer items-center gap-3 rounded-md border border-gray-600 bg-gray-700 px-6 py-1.5 shadow-lg shadow-gray-900/25 hover:brightness-125;
 
         &-filled {
             @extend .btn;

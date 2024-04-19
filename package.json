@@ -12,6 +12,7 @@
     "@react-pdf/renderer": "^3.4.2",
     "@reduxjs/toolkit": "^2.2.3",
     "axios": "^1.6.8",
+    "change-case": "^5.4.4",
     "next": "14.2.1",
     "prettier-plugin-tailwindcss": "^0.5.12",
     "react": "^18",
@@ -20,6 +21,7 @@
     "react-parallax-tilt": "^1.7.221",
     "react-redux": "^9.1.1",
     "sass": "^1.74.1",
+    "tailwind-merge": "^2.2.2",
     "tw-merge": "0.0.1-alpha.3"
   },
   "devDependencies": {

@@ -1,22 +1,19 @@
-'use client';
-
-import { useRouter } from 'next/navigation';
-
-const tabs = ['basic', 'education', 'experience', 'projects', 'skills', 'contact', 'certifications', 'settings'];
+import ResumeFields from '@/config/ResumeFields';
+import Link from 'next/link';
 
 const Tabs = ({ activeTab }) => {
-    const router = useRouter();
+    const tabs = Object.keys(ResumeFields);
 
     return (
         <div className="flex gap-2">
             {tabs.map(tab => (
-                <div
+                <Link
                     key={tab}
-                    className={`cursor-pointer tabs rounded-md relative px-4 py-1.5 text-sm capitalize ${activeTab === tab ? 'bg-primary-500 text-black' : 'bg-gray-800 hover:bg-gray-700'}`}
-                    onClick={() => router.push(`/editor/?tab=${tab}`)}
+                    className={`tabs relative cursor-pointer rounded-md px-4 py-1.5 text-sm capitalize ${activeTab === tab ? 'bg-primary-500 text-black' : 'bg-gray-700/50 hover:bg-gray-700'}`}
+                    href={`/editor/?tab=${tab}`}
                 >
                     {tab}
-                </div>
+                </Link>
             ))}
         </div>
     );

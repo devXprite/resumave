@@ -14,6 +14,9 @@ dependencies:
   axios:
     specifier: ^1.6.8
     version: 1.6.8
+  change-case:
+    specifier: ^5.4.4
+    version: 5.4.4
   next:
     specifier: 14.2.1
     version: 14.2.1(react-dom@18.2.0)(react@18.2.0)(sass@1.74.1)
@@ -38,6 +41,9 @@ dependencies:
   sass:
     specifier: ^1.74.1
     version: 1.74.1
+  tailwind-merge:
+    specifier: ^2.2.2
+    version: 2.2.2
   tw-merge:
     specifier: 0.0.1-alpha.3
     version: 0.0.1-alpha.3
@@ -513,6 +519,10 @@ packages:
 
   /caniuse-lite@1.0.30001611:
     resolution: {integrity: sha512-19NuN1/3PjA3QI8Eki55N8my4LzfkMCRLgCVfrl/slbSAchQfV0+GwjPrK3rq37As4UCLlM/DHajbKkAqbv92Q==}
+    dev: false
+
+  /change-case@5.4.4:
+    resolution: {integrity: sha512-HRQyTk2/YPEkt9TnUPbOpr64Uw3KOicFWPVBb+xiHvd6eBx/qPr9xqfBFDT8P2vWsvvz4jbEkfDe71W3VyNu2w==}
     dev: false
 
   /chokidar@3.6.0:
@@ -1478,6 +1488,12 @@ packages:
 
   /svg-arc-to-cubic-bezier@3.2.0:
     resolution: {integrity: sha512-djbJ/vZKZO+gPoSDThGNpKDO+o+bAeA4XQKovvkNCqnIS2t+S4qnLAGQhyyrulhCFRl1WWzAp0wUDV8PpTVU3g==}
+    dev: false
+
+  /tailwind-merge@2.2.2:
+    resolution: {integrity: sha512-tWANXsnmJzgw6mQ07nE3aCDkCK4QdT3ThPMCzawoYA2Pws7vSTCvz3Vrjg61jVUGfFZPJzxEP+NimbcW+EdaDw==}
+    dependencies:
+      '@babel/runtime': 7.24.4
     dev: false
 
   /tailwindcss@3.4.3:
