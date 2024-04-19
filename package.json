@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-pdf/renderer": "^3.4.2",
+    "@reduxjs/toolkit": "^2.2.3",
     "axios": "^1.6.8",
     "next": "14.2.1",
     "prettier-plugin-tailwindcss": "^0.5.12",
@@ -16,11 +18,13 @@
     "react-dom": "^18",
     "react-icons": "^5.0.1",
     "react-parallax-tilt": "^1.7.221",
+    "react-redux": "^9.1.1",
     "sass": "^1.74.1",
     "tw-merge": "0.0.1-alpha.3"
   },
   "devDependencies": {
     "postcss": "^8",
+    "react-hot-toast": "^2.4.1",
     "tailwindcss": "^3.4.1"
   }
 }

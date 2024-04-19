@@ -1,10 +1,9 @@
-'use client';
-
-import Tilt from 'react-parallax-tilt';
+import Tilt from '@/components/Tilt';
+import Link from 'next/link';
 
 const page = () => {
     return (
-        <div className="mx-auto flex min-h-[calc(100vh-3rem)] max-w-screen-xl items-center justify-between gap-8 overflow-hidden px-3">
+        <div className="flex h-full min-h-[calc(100vh-3rem)] items-center justify-between gap-8 overflow-hidden px-3">
             <div>
                 <h4 className="text-lg">
                     <span className="text-gradient">A Free and Open Source Resume Builder</span>
@@ -20,13 +19,15 @@ const page = () => {
                 </p>
 
                 <div className="mt-16 flex items-center justify-start gap-8">
-                    <button className="btn-filled">Create My Resume</button>
+                    <Link href={'/editor'} className="btn-filled">
+                        Create My Resume
+                    </Link>
 
                     <button className="btn">View Source</button>
                 </div>
             </div>
             <div className="">
-                <Tilt trackOnWindow={true} tiltReverse={true} glareEnable={true} className="shadow-2xl shadow-gray-900">
+                <Tilt>
                     <img
                         src="https://d.novoresume.com/images/doc/preview/creative-resume-template.png"
                         className="md:w-[22rem]"

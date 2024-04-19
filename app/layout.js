@@ -11,7 +11,7 @@ export default function RootLayout({ children }) {
         <html lang="en">
             <body>
                 <Header />
-                {children}
+                <div className="mx-auto  min-h-[calc(100vh-3rem)] max-w-screen-xl ">{children}</div>
             </body>
         </html>
     );

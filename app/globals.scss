@@ -32,3 +32,11 @@
         @apply bg-clip-text text-transparent;
     }
 }
+
+
+.tabs{
+    &::after{
+        content: "";
+        @apply absolute h-2 bottom-0 w-full left-0;
+    }
+}
