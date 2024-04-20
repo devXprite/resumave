@@ -23,7 +23,7 @@ const store = configureStore({
     },
 });
 
-function debounce(func, timeout = 1500) {
+function debounce(func, timeout = 2500) {
     let timer;
     return (...args) => {
         clearTimeout(timer);

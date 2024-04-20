@@ -9,7 +9,7 @@ const Tabs = ({ activeTab }) => {
             {tabs.map(tab => (
                 <Link
                     key={tab}
-                    className={`tabs relative cursor-pointer rounded-md px-4 py-1.5 text-sm capitalize ${activeTab === tab ? 'bg-primary-500 text-black' : 'bg-gray-700/50 hover:bg-gray-700'}`}
+                    className={`tabs relative cursor-pointer rounded-md px-4 py-1.5 text-sm capitalize ${activeTab === tab ? 'bg-primary-500 text-black' : 'bg-gray-700/75 hover:bg-gray-600'}`}
                     href={`/editor/?tab=${tab}`}
                 >
                     {tab}

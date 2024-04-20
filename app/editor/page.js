@@ -1,11 +1,11 @@
-
 import Editor from '@/components/Editor';
+import Preview from '@/components/Resume/Preview';
 import Tabs from '@/components/Tabs';
 
-const page = ({ searchParams: { tab = 'basic' } }) => {
+const page = ({ searchParams: { tab = 'contact' } }) => {
     return (
-        <div className="mt-8 xl:mt-16 flex gap-10">
-            <div className="aspect-[210/297] w-[28rem] border-gray-500 bg-white/20"></div>
+        <div className="mt-8 flex gap-10 xl:mt-16">
+            <Preview />
             <div className="flex-grow ">
                 <Tabs activeTab={tab} />
                 <Editor tab={tab} />

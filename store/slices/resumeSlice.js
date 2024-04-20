@@ -1,23 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const defaultResume = {
-    basic: {},
-    education: [
-        {
-            degree: 'MCA',
-        },
-        {
-            degree: 'BCA',
-        },
-        {
-            degree: 'Inter',
-        },
-        {
-            degree: 'HighSchool',
-        },
-    ],
+    contact: {},
+    education: [],
     experience: [],
     projects: [],
+    skills: [],
+
+    saved: false,
 };
 
 const resumeSlice = createSlice({
@@ -31,20 +21,29 @@ const resumeSlice = createSlice({
             } else {
                 state[tab][name] = value;
             }
+
+            state.saved = false;
         },
 
         addNewIndex: (state, action) => {
             const { tab, name, value } = action.payload;
-            state[tab].push({ [name]: [value] });
+            state[tab].push({});
+            // state[tab].push({ [name]: [value] });
+            state.saved = false;
         },
 
         deleteIndex: (state, action) => {
             const { index, tab } = action.payload;
             console.log('deleting', index, 'from', tab);
             state[tab].splice(index, 1);
+            state.saved = false;
+        },
+
+        saveResume: state => {
+            state.saved = true;
         },
     },
 });
 
-export const { updateResumeValue, addNewIndex, deleteIndex } = resumeSlice.actions;
+export const { updateResumeValue, addNewIndex, deleteIndex, saveResume } = resumeSlice.actions;
 export default resumeSlice.reducer;

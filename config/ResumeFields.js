@@ -1,16 +1,23 @@
 export default {
-    basic: {
-        name: 'Basic',
+    contact: {
+        name: 'Contact',
         fields: [
-            { name: 'name', label: 'Full Name', required: true},
-            { name: 'title', label: 'Your Job Title' },
-            { name: 'email', label: 'Email', type: 'email' },
-            { name: 'phone', label: 'Phone', type: 'tel' },
-            { name: 'address', label: 'Address' },
-            { name: 'linkedin', label: 'Linked' },
-            { name: 'github', label: 'Github' },
-            { name: 'website', label: 'Website' },
-            { name: 'summary', label: 'Summary', type: 'textarea', span: true, rows:3 },
+            { name: 'name', label: 'Full Name', placeholder: 'John Doe', required: true },
+            { name: 'title', label: 'Your Job Title', placeholder: 'Software Developer' },
+            { name: 'email', label: 'Email', type: 'email', placeholder: 'john.doe@example.com' },
+            { name: 'phone', label: 'Phone', type: 'tel', placeholder: '+1234567890' },
+            { name: 'address', label: 'Address', placeholder: '123 Street, City, Country' },
+            { name: 'linkedin', label: 'Linked', placeholder: 'linkedin.com/in/johndoe' },
+            { name: 'github', label: 'Github', placeholder: 'github.com/johndoe' },
+            { name: 'website', label: 'Website', placeholder: 'johndoe.com' },
+            {
+                name: 'summary',
+                label: 'Summary',
+                type: 'textarea',
+                placeholder: 'Brief summary of your skills and experience...',
+                span: true,
+                rows: 3,
+            },
         ],
     },
 
@@ -18,12 +25,12 @@ export default {
         name: 'Education',
         multiple: true,
         fields: [
-            { name: 'degree', label: 'Degree' },
-            { name: 'institution', label: 'Institution/Place of Education' },
-            { name: 'start', label: 'Start Date', type: 'month' },
-            { name: 'end', label: 'End Date', type: 'month' },
-            { name: 'location', label: 'Description', },
-            { name: 'gpa', label: 'gpa', },
+            { name: 'degree', label: 'Study Program', placeholder: 'Bachelor of Computer Science' },
+            { name: 'institution', label: 'Institution', placeholder: 'University Name' },
+            { name: 'start', label: 'Start Date', type: 'month', placeholder: 'MM/YYYY' },
+            { name: 'end', label: 'End Date', type: 'month', placeholder: 'MM/YYYY' },
+            { name: 'location', label: 'Location', placeholder: 'City, Country' },
+            { name: 'gpa', label: 'GPA', placeholder: '3.8/4.0' },
         ],
     },
 
@@ -31,11 +38,18 @@ export default {
         name: 'Experience',
         multiple: true,
         fields: [
-            { name: 'role', label: 'Title' },
-            { name: 'company', label: 'Company' },
-            { name: 'start', label: 'Start Date', type: 'date' },
-            { name: 'end', label: 'End Date', type: 'date' },
-            { name: 'description', label: 'Description', type: 'textarea' },
+            { name: 'role', label: 'Title / Position', span: true, placeholder: 'Software Engineer' },
+            { name: 'company', label: 'Workplace / Company', placeholder: 'Company Name' },
+            { name: 'location', label: 'Location', placeholder: 'City, Country' },
+            { name: 'start', label: 'Start Date', type: 'date', placeholder: 'MM/DD/YYYY' },
+            { name: 'end', label: 'End Date', type: 'date', placeholder: 'MM/DD/YYYY' },
+            {
+                name: 'description',
+                label: 'Responsibility',
+                type: 'textarea',
+                placeholder: 'Brief description of your responsibilities...',
+                span: true,
+            },
         ],
     },
 
@@ -43,14 +57,48 @@ export default {
         name: 'Projects',
         multiple: true,
         fields: [
-            { name: 'name', label: 'Name' },
-            { name: 'description', label: 'Description', type: 'textarea' },
-            { name: 'link', label: 'Link' },
+            { name: 'title', label: 'Project Title', placeholder: 'Project Name' },
+            { name: 'url', label: 'Project Url', placeholder: 'https://example.com/project' },
+            {
+                name: 'description',
+                label: 'Now Describe What you did',
+                type: 'textarea',
+                placeholder: 'Briefly describe your project...',
+                span: true,
+            },
         ],
     },
 
     skills: {
         name: 'Skills',
-        fields: [{ name: 'skills', label: 'Skills', type: 'textarea' }],
+        fields: [
+            {
+                name: 'skills',
+                label: 'Skills',
+                type: 'textarea',
+                placeholder: 'List your skills separated by commas...',
+                span: true,
+                rows: 3,
+            },
+        ],
+    },
+
+    certificates: {
+        name: 'Certificates',
+        multiple: true,
+        fields: [
+            { name: 'title', label: 'Certificate Title', placeholder: 'Certificate Name' },
+            { name: 'organization', label: 'Issuing Organization', placeholder: 'Organization Name' },
+            { name: 'date', label: 'Issuance Date', type: 'date', placeholder: 'MM/DD/YYYY' },
+        ],
+    },
+
+    languages: {
+        name: 'Languages',
+        multiple: true,
+        fields: [
+            { name: 'language', label: 'Language', placeholder: 'Language Name' },
+            { name: 'proficiency', label: 'Proficiency', placeholder: 'e.g., Fluent, Intermediate, Beginner' },
+        ],
     },
 };

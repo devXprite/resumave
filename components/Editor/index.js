@@ -1,46 +1,35 @@
 'use client';
 
 import ResumeFields from '@/config/ResumeFields';
-import { useRouter } from 'next/navigation';
-import { FaArrowRight } from 'react-icons/fa6';
+import { FaSave } from 'react-icons/fa';
 import SingleEditor from './SingleEditor';
 import MultiEditor from './MultiEditor';
+import { useDispatch } from 'react-redux';
+import { saveResume } from '@/store/slices/resumeSlice';
+import { useEffect } from 'react';
 
 const Editor = ({ tab }) => {
-    const router = useRouter();
     const { multiple } = ResumeFields[tab];
+    const dispatch = useDispatch();
 
-    const allTabs = Object.keys(ResumeFields);
-    const currentTabIndex = allTabs.findIndex(t => t === tab);
-
-    const saveAndNext = e => {
-        e.preventDefault();
-        console.log('Save and Next');
-
-        if (currentTabIndex < allTabs.length - 1) {
-            const nextTab = allTabs[currentTabIndex + 1];
-            router.push(`/editor/?tab=${nextTab}`);
-        } else {
-            router.push(`/preview`);
-        }
+    const save = e => {
+        e?.preventDefault();
+        dispatch(saveResume());
     };
+
+    useEffect(() => {
+        const interval = setInterval(save, 10000);
+        return () => clearInterval(interval);
+    }, []);
 
     return (
         <>
-            <form action="" onSubmit={saveAndNext} className="card mt-8">
-                
-
-                {multiple && (
-                    <div>
-                        <MultiEditor tab={tab} />
-                    </div>
-                )}
-
+            <form onSubmit={save} className="card mt-8">
+                {multiple && <MultiEditor tab={tab} />}
                 {!multiple && <SingleEditor tab={tab} />}
 
                 <button type="submit" className="btn-filled ml-auto mt-6 gap-2 px-6 text-center">
-                    {currentTabIndex < allTabs.length - 1 ? 'Save & Next' : 'Preview'}
-                    <FaArrowRight />
+                    <span>Save</span> <FaSave />
                 </button>
             </form>
         </>
