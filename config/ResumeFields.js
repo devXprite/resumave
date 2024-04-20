@@ -20,10 +20,10 @@ export default {
         fields: [
             { name: 'degree', label: 'Degree' },
             { name: 'institution', label: 'Institution/Place of Education' },
-            { name: 'start', label: 'Start Date', type: 'date' },
-            { name: 'end', label: 'End Date', type: 'date' },
-            { name: 'description', label: 'Description', type: 'textarea' },
-            { name: 'gpa', label: 'gpa', type: 'textarea' },
+            { name: 'start', label: 'Start Date', type: 'month' },
+            { name: 'end', label: 'End Date', type: 'month' },
+            { name: 'location', label: 'Description', },
+            { name: 'gpa', label: 'gpa', },
         ],
     },
 

@@ -1,15 +1,14 @@
 'use client';
 
-import InputBox from '@/components/UI/InputBox';
 import ResumeFields from '@/config/ResumeFields';
 import { useRouter } from 'next/navigation';
 import { FaArrowRight } from 'react-icons/fa6';
-import { LuPlus } from "react-icons/lu";
-
+import SingleEditor from './SingleEditor';
+import MultiEditor from './MultiEditor';
 
 const Editor = ({ tab }) => {
     const router = useRouter();
-    const { fields, multiple } = ResumeFields[tab];
+    const { multiple } = ResumeFields[tab];
 
     const allTabs = Object.keys(ResumeFields);
     const currentTabIndex = allTabs.findIndex(t => t === tab);
@@ -28,23 +27,16 @@ const Editor = ({ tab }) => {
 
     return (
         <>
-            <form
-                action=""
-                onSubmit={saveAndNext}
-                className="mt-8 rounded-md border border-gray-600 bg-gray-700/25 p-6 shadow-xl"
-            >
+            <form action="" onSubmit={saveAndNext} className="card mt-8">
+                
+
                 {multiple && (
-                    <button className="btn bg-gray-600/75 ml-auto mb-6 text-sm">
-                        <LuPlus />
-                        <span>Add More</span>
-                    </button>
+                    <div>
+                        <MultiEditor tab={tab} />
+                    </div>
                 )}
 
-                <div className=" grid grid-cols-2 gap-x-8 gap-y-5">
-                    {fields.map(field => (
-                        <InputBox key={field.name} {...field} />
-                    ))}
-                </div>
+                {!multiple && <SingleEditor tab={tab} />}
 
                 <button type="submit" className="btn-filled ml-auto mt-6 gap-2 px-6 text-center">
                     {currentTabIndex < allTabs.length - 1 ? 'Save & Next' : 'Preview'}

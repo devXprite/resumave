@@ -3,7 +3,7 @@
 import { twMerge } from 'tailwind-merge';
 import { sentenceCase } from 'change-case';
 
-const InputBox = ({ label, name, type, placeholder, options, ...props }) => {
+const Input = ({ label, name, type, placeholder, options,span, ...props }) => {
     const inputClassName = `block w-full rounded-md border border-gray-600 bg-gray-700/50 p-2 text-sm text-gray-100 outline-none focus:border-2 focus:border-primary-500 md:text-base`;
 
     const InputEl = () => {
@@ -59,6 +59,7 @@ const InputBox = ({ label, name, type, placeholder, options, ...props }) => {
                 name={name}
                 id={name}
                 // className={inputClassName}
+                
                 className={
                     'block w-full rounded-md border border-gray-600 bg-gray-700/75 p-2 text-sm text-gray-100 shadow-lg shadow-gray-800 outline-none focus:border-2 focus:border-primary-500 md:text-base'
                 }
@@ -70,17 +71,16 @@ const InputBox = ({ label, name, type, placeholder, options, ...props }) => {
     };
 
     return (
-        <div className={`${props.span ? 'col-span-2' : 'col-span-1'}`}>
+        <div className={`${span ? 'col-span-2' : 'col-span-1'}`}>
             {label && (
                 <label htmlFor={name} className="mb-0.5 block text-xs text-gray-300 md:text-sm">
-                    {/* {label} */}
-                    {label || sentenceCase(name)} {props.required && '*'}
+                    {label ?? sentenceCase(name)} {props.required && '*'}
                 </label>
             )}
 
-            <InputEl />
+            {InputEl()}
         </div>
     );
 };
 
-export default InputBox;
+export default Input;

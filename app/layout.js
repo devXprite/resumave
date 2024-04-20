@@ -1,5 +1,7 @@
 import Header from '@/components/Header';
+
 import './globals.scss';
+import ReduxProvider from '@/store/ReduxProvider';
 
 export const metadata = {
     title: 'Create Next App',
@@ -10,8 +12,10 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <body>
-                <Header />
-                <div className="mx-auto  min-h-[calc(100vh-3rem)] max-w-screen-xl ">{children}</div>
+                <ReduxProvider>
+                    <Header />
+                    <div className="mx-auto  min-h-[calc(100vh-3rem)] max-w-screen-xl ">{children}</div>
+                </ReduxProvider>
             </body>
         </html>
     );

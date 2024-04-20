@@ -6,7 +6,7 @@
 
 @layer base {
     body {
-        @apply bg-gray-800 text-white;
+        @apply bg-gray-800 text-gray-200 caret-primary-400;
         font-family: 'Ubuntu', sans-serif;
     }
 }
@@ -19,6 +19,10 @@
             @extend .btn;
             @apply border-primary-500 bg-primary-400 text-gray-900;
         }
+    }
+
+    .card{
+        @apply rounded-md border border-gray-600 bg-gray-700/25 p-6 shadow-xl;
     }
 }
 
