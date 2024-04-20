@@ -59,7 +59,7 @@ const MultiEditor = ({ tab }) => {
                 </div>
             )}
 
-            <div className="space-y-4">
+            <div className="space-y-5">
                 {resumeData.map((e, i) => (
                     <div
                         key={i}
@@ -97,7 +97,7 @@ const MultiEditor = ({ tab }) => {
                         </h3>
 
                         {selectedCard == i && (
-                            <div className="mt-5 grid grid-cols-2 gap-6">
+                            <div className="mt-6 grid grid-cols-2 gap-6">
                                 {fields.map(field => (
                                     <Input
                                         key={field.name}

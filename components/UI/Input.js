@@ -61,7 +61,7 @@ const Input = ({ label, name, type, placeholder, options,span, ...props }) => {
                 // className={inputClassName}
                 
                 className={
-                    'block w-full rounded-md border border-gray-600 bg-gray-700/75 p-2 text-sm text-gray-100 shadow-lg shadow-gray-800 outline-none focus:border-2 focus:border-primary-500 md:text-base'
+                    'block w-full rounded-md border border-gray-600 bg-gray-700/75 p-2 text-sm text-gray-100 shadow-md focus:bg-gray-700 shadow-gray-800 outline-none focus:border-2 focus:border-primary-500 md:text-base'
                 }
                 placeholder={placeholder || `Enter ${label}`}
                 {...props}
