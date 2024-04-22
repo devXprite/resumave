@@ -67,7 +67,7 @@ const MultiEditor = ({ tab }) => {
                         onClick={_ => setSelectedCard(i)}
                     >
                         <h3 className="flex items-center justify-between gap-5">
-                            <span className="mr-auto">{Object.values(e)[0]}</span>
+                            <span className="mr-auto">{Object.values(e)[0] || 'Untitled'}</span>
 
                             {selectedCard == i ?
                                 <button
@@ -97,7 +97,7 @@ const MultiEditor = ({ tab }) => {
                         </h3>
 
                         {selectedCard == i && (
-                            <div className="mt-6 grid grid-cols-2 gap-6">
+                            <div className="mt-6 grid md:grid-cols-2 gap-4 md:gap-6">
                                 {fields.map(field => (
                                     <Input
                                         key={field.name}

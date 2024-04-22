@@ -24,11 +24,11 @@ const Editor = ({ tab }) => {
 
     return (
         <>
-            <form onSubmit={save} className="card mt-8">
+            <form onSubmit={save} className="card my-8">
                 {multiple && <MultiEditor tab={tab} />}
                 {!multiple && <SingleEditor tab={tab} />}
 
-                <button type="submit" className="btn-filled ml-auto mt-6 gap-2 px-6 text-center">
+                <button type="submit" className="btn-filled ml-auto mt-6 w-full gap-2 px-6 text-center md:w-auto">
                     <span>Save</span> <FaSave />
                 </button>
             </form>

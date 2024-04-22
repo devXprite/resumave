@@ -1,6 +1,7 @@
 export default {
     contact: {
         name: 'Contact',
+        name: 'Contact',
         fields: [
             { name: 'name', label: 'Full Name', placeholder: 'John Doe', required: true },
             { name: 'title', label: 'Your Job Title', placeholder: 'Software Developer' },
@@ -9,18 +10,24 @@ export default {
             { name: 'address', label: 'Address', placeholder: '123 Street, City, Country' },
             { name: 'linkedin', label: 'Linked', placeholder: 'linkedin.com/in/johndoe' },
             { name: 'github', label: 'Github', placeholder: 'github.com/johndoe' },
-            { name: 'website', label: 'Website', placeholder: 'johndoe.com' },
+            { name: 'blogs', label: 'Blogs', placeholder: 'github.com/johndoe' },
+            { name: 'twitter', label: 'Twitter', placeholder: 'github.com/johndoe' },
+            { name: 'portfolio', label: 'Portfolio', placeholder: 'johndoe.com' },
+        ],
+    },
+    summary: {
+        name: 'Summary',
+        fields: [
             {
                 name: 'summary',
                 label: 'Summary',
                 type: 'textarea',
                 placeholder: 'Brief summary of your skills and experience...',
                 span: true,
-                rows: 3,
+                rows: 5,
             },
         ],
     },
-
     education: {
         name: 'Education',
         multiple: true,
@@ -41,14 +48,15 @@ export default {
             { name: 'role', label: 'Title / Position', span: true, placeholder: 'Software Engineer' },
             { name: 'company', label: 'Workplace / Company', placeholder: 'Company Name' },
             { name: 'location', label: 'Location', placeholder: 'City, Country' },
-            { name: 'start', label: 'Start Date', type: 'date', placeholder: 'MM/DD/YYYY' },
-            { name: 'end', label: 'End Date', type: 'date', placeholder: 'MM/DD/YYYY' },
+            { name: 'start', label: 'Start Date', type: 'month', placeholder: 'MM/DD/YYYY' },
+            { name: 'end', label: 'End Date', type: 'month', placeholder: 'MM/DD/YYYY' },
             {
                 name: 'description',
                 label: 'Responsibility',
                 type: 'textarea',
                 placeholder: 'Brief description of your responsibilities...',
                 span: true,
+                rows: 4
             },
         ],
     },

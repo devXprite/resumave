@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const defaultResume = {
     contact: {},
+    summary: {},
     education: [],
     experience: [],
     projects: [],

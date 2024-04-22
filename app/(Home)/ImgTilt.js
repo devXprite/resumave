@@ -1,14 +1,15 @@
 'use client';
 
 import ReactTilt from 'react-parallax-tilt';
+import { twMerge } from 'tailwind-merge';
 
-const Tilt = ({ props, children }) => {
+const ImgTilt = ({ props, children }) => {
     return (
         <ReactTilt
             trackOnWindow={true}
             tiltReverse={true}
             glareEnable={true}
-            className="shadow-2xl shadow-gray-900"
+            className={twMerge('shadow-2xl shadow-gray-900 w-44 md:w-[22rem]')}
             {...props}
         >
             {children}
@@ -16,4 +17,4 @@ const Tilt = ({ props, children }) => {
     );
 };
 
-export default Tilt;
+export default ImgTilt;

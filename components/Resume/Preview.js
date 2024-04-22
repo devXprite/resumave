@@ -14,8 +14,8 @@ const Preview = () => {
     }, [resumeData.saved]);
 
     return (
-        <div className="w-[28rem] h-[40rem]">
-            <PDFViewer className="h-full w-full" showToolbar={false}>
+        <div className="hidden md:block w-[28rem] h-[40rem]">
+            <PDFViewer className="h-full w-full" showToolbar={true}>
                 <Resume data={data} />
             </PDFViewer>
         </div>

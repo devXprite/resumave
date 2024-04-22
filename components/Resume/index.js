@@ -2,6 +2,9 @@
 
 import { Page, Text, View, Document, StyleSheet, Font } from '@react-pdf/renderer';
 import Header from './sections/Header';
+import Section from './Section';
+import Education from './sections/Education';
+import Experience from './sections/Experience';
 
 Font.register({
     family: 'Merriweather',
@@ -11,19 +14,26 @@ Font.register({
 const styles = StyleSheet.create({
     page: {
         backgroundColor: '#ffffff',
-        margin: 10,
-        padding: 10,
-        // fontFamily: 'Merriweather',
+        color: '#555',
+        padding: 24,
+        fontFamily: 'Times-Roman',
     },
 });
 
 const Resume = ({ data }) => {
-    const { contact } = data;
+    const { contact, education, experience } = data;
 
     return (
         <Document language="en">
             <Page size="A4" style={styles.page}>
                 <Header data={contact} />
+
+                <Section title={'Summery'}>
+                    <Text style={{ fontSize: 10 }}>{data.summary?.summary}</Text>
+                </Section>
+
+                {education.length > 0 && <Education data={education} />}
+                {experience.length > 0 && <Experience data={experience} />}
             </Page>
         </Document>
     );
