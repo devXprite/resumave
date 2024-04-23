@@ -145,7 +145,9 @@ const Experience = ({ data }) => (
 const Skills = ({ data }) => (
     <Section title={'skills'}>
         {data?.split('\n').map((line, i) => (
-            <Text style={{ fontSize: 11 }}>{line}</Text>
+            <Text key={i} style={{ fontSize: 11 }}>
+                {line}
+            </Text>
         ))}
     </Section>
 );
@@ -154,8 +156,8 @@ const Resume = ({ data }) => {
     const { contact, education, experience, projects, summary, skills } = data;
 
     return (
-        <Document language="en" >
-            <Page size="A4"  style={styles.page}>
+        <Document language="en">
+            <Page size="A4" style={styles.page}>
                 <Header data={contact} />
 
                 {summary?.summary && (
