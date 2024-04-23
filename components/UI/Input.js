@@ -13,7 +13,7 @@ const Input = ({ label, name, type, placeholder, options, span, ...props }) => {
                     id={name}
                     name={name}
                     placeholder={placeholder}
-                    className={twMerge(inputClassName, '')}
+                    className={twMerge(inputClassName, 'text-sm min-h-56 md:min-h-40')}
                     {...props}
                 >
                     {props.value}

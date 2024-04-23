@@ -1,9 +1,12 @@
 'use client';
 
-import Resume from '.';
-import { useSelector } from 'react-redux';
-import { PDFViewer } from '@react-pdf/renderer';
 import { useEffect, useState } from 'react';
+import Resume from './pdf';
+import { useSelector } from 'react-redux';
+import { BlobProvider, PDFViewer } from '@react-pdf/renderer';
+
+// import "react-pdf/dist/Page/AnnotationLayer.css";
+// import "react-pdf/dist/Page/TextLayer.css";
 
 const Preview = () => {
     const resumeData = useSelector(state => state.resume);
@@ -14,7 +17,7 @@ const Preview = () => {
     }, [resumeData.saved]);
 
     return (
-        <div className="hidden md:block w-[28rem] h-[40rem]">
+        <div className="hidden h-[40rem] w-[28rem] md:block">
             <PDFViewer className="h-full w-full" showToolbar={true}>
                 <Resume data={data} />
             </PDFViewer>

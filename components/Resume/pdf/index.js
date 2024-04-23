@@ -1,76 +1,10 @@
 'use client';
 
-import { Page, Text, View, Document, StyleSheet, Link } from '@react-pdf/renderer';
+import { Page, Text, View, Document, Link } from '@react-pdf/renderer';
 import Section from './Section';
 import ListItem from './ListItem';
-
-const styles = StyleSheet.create({
-    page: {
-        backgroundColor: '#ffffff',
-        color: '#555',
-        padding: 30,
-        fontFamily: 'Times-Roman',
-    },
-
-    header: {
-        textAlign: 'center',
-    },
-
-    header__name: {
-        color: '#111',
-        fontSize: 20,
-        fontFamily: 'Times-Bold',
-        textAlign: 'center',
-    },
-    header__links: {
-        color: '#555',
-        fontSize: 11,
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
-        gap: 14,
-        marginTop: 6,
-        marginBottom: 4,
-    },
-
-    title_wrapper: {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        fontSize: 12,
-    },
-
-    subTitle_wrapper: {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        fontSize: 11,
-    },
-
-    title: {
-        fontFamily: 'Times-Bold',
-        marginRight: 'auto',
-        color: '#555',
-    },
-    date: {
-        fontFamily: 'Times-Italic',
-        fontSize: 10,
-    },
-
-    line: {
-        borderBottom: '1px solid #eee',
-        margin: '5px 0px',
-    },
-    lists: {
-        fontSize: 10.2,
-        marginTop: 2,
-    },
-    link: {
-        color: '#666',
-    },
-});
+import styles from '../Styles';
+import formatDate from '@/utils/formatDate';
 
 const Header = ({ data }) => {
     const contactLinks = [
@@ -122,22 +56,22 @@ const Header = ({ data }) => {
 
 const Education = ({ data }) => (
     <Section title={'Education'}>
-        {data.map((educationObj, i) => (
+        {data.map(({ degree, institution, start, end, location, gpa }, i) => (
             <View key={i} style={styles?.wrappper}>
                 <View style={styles.title_wrapper}>
-                    <Text style={styles.title}>{educationObj.degree}</Text>
+                    <Text style={styles.title}>{degree}</Text>
                     <Text style={styles.date}>
-                        ({educationObj.start} - {educationObj.end})
+                        {formatDate(start)}- {formatDate(end)}
                     </Text>
                 </View>
 
                 <View style={styles.subTitle_wrapper}>
                     <Text>
-                        {educationObj.institution}
-                        {educationObj.gpa && <Text> ({educationObj.gpa})</Text>}
+                        {institution}
+                        {gpa && <Text> ({gpa})</Text>}
                     </Text>
 
-                    <Text style={styles.date}>{educationObj.location}</Text>
+                    <Text style={styles.date}>{location}</Text>
                 </View>
 
                 {i !== data.length - 1 && <View style={styles.line} />}
@@ -183,22 +117,22 @@ const Projects = ({ data }) => (
 
 const Experience = ({ data }) => (
     <Section title={'Experience'}>
-        {data.map((experience, i) => (
+        {data.map(({ role, start, end, company, location, description }, i) => (
             <View key={i} style={styles?.wrappper}>
                 <View style={styles.title_wrapper}>
-                    <Text style={styles.title}>{experience.role}</Text>
+                    <Text style={styles.title}>{role}</Text>
                     <Text style={styles.date}>
-                        {experience.start} - {experience.end}
+                        {formatDate(start)} - {formatDate(end)}
                     </Text>
                 </View>
 
                 <View style={styles.subTitle_wrapper}>
-                    <Text>{experience.company}</Text>
-                    <Text>{experience.location}</Text>
+                    <Text>{company}</Text>
+                    <Text>{location}</Text>
                 </View>
 
                 <View style={styles.lists}>
-                    {experience.description?.split('\n').map((responsibility, i) => (
+                    {description?.split('\n').map((responsibility, i) => (
                         <ListItem key={i}>{responsibility}</ListItem>
                     ))}
                 </View>
@@ -208,28 +142,33 @@ const Experience = ({ data }) => (
     </Section>
 );
 
-
 const Skills = ({ data }) => (
     <Section title={'skills'}>
-        
+        {data?.split('\n').map((line, i) => (
+            <Text style={{ fontSize: 11 }}>{line}</Text>
+        ))}
     </Section>
 );
 
-
 const Resume = ({ data }) => {
-    const { contact, education, experience, projects } = data;
+    const { contact, education, experience, projects, summary, skills } = data;
 
     return (
-        <Document language="en">
-            <Page size="A4" style={styles.page}>
+        <Document language="en" >
+            <Page size="A4"  style={styles.page}>
                 <Header data={contact} />
-                <Section title={'Summery'}>
-                    <Text style={{ fontSize: 10 }}>{data.summary?.summary}</Text>
-                </Section>
+
+                {summary?.summary && (
+                    <Section title={'Summery'}>
+                        <Text style={{ fontSize: 10 }}>{summary?.summary}</Text>
+                    </Section>
+                )}
 
                 {education.length > 0 && <Education data={education} />}
                 {experience.length > 0 && <Experience data={experience} />}
                 {projects.length > 0 && <Projects data={projects} />}
+
+                {skills?.skills?.length > 0 && <Skills data={skills.skills} />}
             </Page>
         </Document>
     );

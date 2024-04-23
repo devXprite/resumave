@@ -1,5 +1,6 @@
 import Editor from '@/components/Editor';
 import Preview from '@/components/Resume/Preview';
+// import Preview from '@/components/Resume/html';
 import Tabs from '@/components/Tabs';
 
 const page = ({ searchParams: { tab = 'contact' } }) => {

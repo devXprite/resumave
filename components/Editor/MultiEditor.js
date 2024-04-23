@@ -69,7 +69,7 @@ const MultiEditor = ({ tab }) => {
                         onClick={_ => setSelectedCard(i)}
                     >
                         <h3 className="flex items-center justify-between gap-5">
-                            <span className="mr-auto">{Object.values(e)[0] || 'Untitled'}</span>
+                            <span className="mr-auto text-sm md:text-base truncate ">{Object.values(e)[0] || 'Untitled'}</span>
 
                             <button
                                 disabled={i == 0}
