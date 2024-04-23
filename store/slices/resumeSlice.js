@@ -6,7 +6,7 @@ const defaultResume = {
     education: [],
     experience: [],
     projects: [],
-    skills: [],
+    skills: {},
 
     saved: false,
 };
