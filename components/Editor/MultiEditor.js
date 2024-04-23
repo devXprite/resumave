@@ -3,11 +3,13 @@
 import { useDispatch } from 'react-redux';
 import Input from '../UI/Input';
 import { useSelector } from 'react-redux';
-import { addNewIndex, deleteIndex, updateResumeValue } from '@/store/slices/resumeSlice';
+import { addNewIndex, deleteIndex, moveIndex, updateResumeValue } from '@/store/slices/resumeSlice';
 import ResumeFields from '@/config/ResumeFields';
 import { LuPlus } from 'react-icons/lu';
 import { useState } from 'react';
-import { FaCrop, FaPencil, FaTrash } from 'react-icons/fa6';
+import { FaArrowUp, FaCrop, FaMinimize, FaPencil, FaTrash } from 'react-icons/fa6';
+import { FaArrowDown } from 'react-icons/fa';
+import { TbArrowsMinimize } from "react-icons/tb";
 
 const MultiEditor = ({ tab }) => {
     const { fields } = ResumeFields[tab];
@@ -69,6 +71,28 @@ const MultiEditor = ({ tab }) => {
                         <h3 className="flex items-center justify-between gap-5">
                             <span className="mr-auto">{Object.values(e)[0] || 'Untitled'}</span>
 
+                            <button
+                                disabled={i == 0}
+                                className="hover:text-primary-400 disabled:cursor-not-allowed disabled:opacity-50"
+                                onClick={_ => {
+                                    _.stopPropagation();
+                                    dispatch(moveIndex({ tab, index: i, dir: 'up' }));
+                                }}
+                            >
+                                <FaArrowUp />
+                            </button>
+
+                            <button
+                                disabled={i == resumeData.length - 1}
+                                className="hover:text-primary-400 disabled:cursor-not-allowed disabled:opacity-50"
+                                onClick={_ => {
+                                    _.stopPropagation();
+                                    dispatch(moveIndex({ tab, index: i }));
+                                }}
+                            >
+                                <FaArrowDown />
+                            </button>
+
                             {selectedCard == i ?
                                 <button
                                     type="button"
@@ -77,9 +101,9 @@ const MultiEditor = ({ tab }) => {
                                         setSelectedCard(null);
                                     }}
                                 >
-                                    <FaCrop />
+                                    <TbArrowsMinimize />
                                 </button>
-                            :   <button type="button">
+                            :   <button type="button" className="text-primary-400">
                                     <FaPencil />
                                 </button>
                             }
@@ -97,7 +121,7 @@ const MultiEditor = ({ tab }) => {
                         </h3>
 
                         {selectedCard == i && (
-                            <div className="mt-6 grid md:grid-cols-2 gap-4 md:gap-6">
+                            <div className="mt-6 grid gap-4 md:grid-cols-2 md:gap-6">
                                 {fields.map(field => (
                                     <Input
                                         key={field.name}

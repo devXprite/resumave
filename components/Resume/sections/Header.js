@@ -3,7 +3,6 @@
 import { Page, Text, View, Document, StyleSheet, Link } from '@react-pdf/renderer';
 
 const Header = ({ data }) => {
-    console.log(data);
 
     const contactLinks = [
         {
@@ -66,12 +65,12 @@ const Header = ({ data }) => {
             <View
                 style={{
                     color: '#555',
-                    fontSize: 12,
+                    fontSize: 11,
                     display: 'flex',
                     flexDirection: 'row',
                     justifyContent: 'center',
                     gap: 14,
-                    marginTop: 10,
+                    marginTop: 8,
                 }}
             >
                 {contactLinks

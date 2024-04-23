@@ -40,11 +40,23 @@ const resumeSlice = createSlice({
             state.saved = false;
         },
 
+        // for move index
+        moveIndex: (state, action) => {
+            const { index, tab, dir } = action.payload;
+
+            const newIndex = dir === 'up' ? index - 1 : index + 1;
+
+            const temp = state[tab][index];
+            state[tab][index] = state[tab][newIndex];
+            state[tab][newIndex] = temp;
+            state.saved = false;
+        },
+
         saveResume: state => {
             state.saved = true;
         },
     },
 });
 
-export const { updateResumeValue, addNewIndex, deleteIndex, saveResume } = resumeSlice.actions;
+export const { updateResumeValue, addNewIndex, deleteIndex, saveResume, moveIndex } = resumeSlice.actions;
 export default resumeSlice.reducer;
