@@ -55,7 +55,7 @@ const MultiEditor = ({ tab }) => {
                 <span>Add New</span>
             </button>
 
-            {resumeData.length == 0 && (
+            {resumeData?.length == 0 && (
                 <div className="my-16">
                     <p className="text-center text-gray-500">Please Add a New {tab}</p>
                 </div>

@@ -152,8 +152,44 @@ const Skills = ({ data }) => (
     </Section>
 );
 
+const Certificaes = ({ data }) => (
+    <Section title={'Certifications'}>
+        {data.map(({ title, issuer, date }, i) => (
+            <View key={i} style={styles?.wrappper}>
+                <View style={styles.title_wrapper}>
+                    <Text style={styles.title}>{title}</Text>
+                    <Text style={styles.date}>{formatDate(date)}</Text>
+                </View>
+
+                <View style={styles.subTitle_wrapper}>
+                    <Text>{issuer}</Text>
+                </View>
+
+                {i !== data.length - 1 && <View style={styles.line} />}
+            </View>
+        ))}
+    </Section>
+);
+
+
+const Languages = ({ data }) => (
+    <Section title={'Languages'}>
+        {data.map(({ language, level }, i) => (
+            <View key={i} style={styles?.wrappper}>
+                <View style={styles.title_wrapper}>
+                    <Text style={styles.title}>{language}</Text>
+                    <Text style={styles.date}>{level}</Text>
+                </View>
+                {i !== data.length - 1 && <View style={styles.line} />}
+            </View>
+        ))}
+    </Section>
+);
+
+
+
 const Resume = ({ data }) => {
-    const { contact, education, experience, projects, summary, skills } = data;
+    const { contact, education, experience, projects, summary, skills, certificates , languages} = data;
 
     return (
         <Document language="en">
@@ -171,6 +207,7 @@ const Resume = ({ data }) => {
                 {projects.length > 0 && <Projects data={projects} />}
 
                 {skills?.skills?.length > 0 && <Skills data={skills.skills} />}
+                {certificates.length > 0 && <Certificaes data={certificates} />}
             </Page>
         </Document>
     );

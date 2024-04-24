@@ -56,7 +56,7 @@ export default {
                 type: 'textarea',
                 placeholder: 'Brief description of your responsibilities...',
                 span: true,
-                rows: 4
+                rows: 4,
             },
         ],
     },
@@ -95,9 +95,9 @@ export default {
         name: 'Certificates',
         multiple: true,
         fields: [
-            { name: 'title', label: 'Certificate Title', placeholder: 'Certificate Name' },
-            { name: 'organization', label: 'Issuing Organization', placeholder: 'Organization Name' },
-            { name: 'date', label: 'Issuance Date', type: 'date', placeholder: 'MM/DD/YYYY' },
+            { name: 'title', label: 'Certificate Title', placeholder: 'Certificate Name', span: true },
+            { name: 'issuer', label: 'Issuing Organization', placeholder: 'Organization Name' },
+            { name: 'date', label: 'Issuance Date', type: 'month', placeholder: 'MM/DD/YYYY' },
         ],
     },
 

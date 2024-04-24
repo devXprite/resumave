@@ -5,22 +5,28 @@ import Resume from './pdf';
 import { useSelector } from 'react-redux';
 import { CgSpinner } from 'react-icons/cg';
 
-import 'react-pdf/dist/Page/AnnotationLayer.css';
-import 'react-pdf/dist/Page/TextLayer.css';
+// import 'react-pdf/dist/Page/AnnotationLayer.css';
+// import 'react-pdf/dist/Page/TextLayer.css';
 
-import { BlobProvider, usePDF } from '@react-pdf/renderer';
+import { usePDF } from '@react-pdf/renderer';
 import { Document, Page, pdfjs } from 'react-pdf';
-import { FaDownload } from 'react-icons/fa6';
+import { FaDownload, FaEye } from 'react-icons/fa6';
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL('pdfjs-dist/build/pdf.worker.min.js', import.meta.url).toString();
 
 const Loader = () => (
-    <div className="w-full">
-        <div>
-            <CgSpinner className="mx-auto mt-16 animate-spin text-center text-4xl text-primary-400 md:text-5xl" />
-        </div>
+    <div className="flex min-h-96 w-full items-center justify-center">
+        <CgSpinner className="mx-auto mt-16 animate-spin text-center text-4xl text-primary-400 md:text-5xl" />
     </div>
 );
+
+const preview = url => {
+    window.open(
+        url,
+        'Resume Preview',
+        `toolbar=no, location=no, menubar=no, scrollbars=no, status=no, titlebar=no, resizable=no, width=600, height=800, left=${window.innerWidth / 2 - 300}, top=100`,
+    );
+};
 
 const Preview = () => {
     const parentRef = useRef(null);
@@ -36,14 +42,23 @@ const Preview = () => {
         <div ref={parentRef} className="relative w-full max-w-[24rem]">
             {instance.loading ?
                 <Loader />
-            :   <Document file={instance.url}>
-                    <Page pageNumber={1} width={parentRef.current?.clientWidth} />
+            :   <Document loading={<Loader />} file={instance.url}>
+                    <Page
+                        pageNumber={1}
+                        renderTextLayer={false}
+                        renderAnnotationLayer={false}
+                        loading={<Loader />}
+                        width={parentRef.current?.clientWidth}
+                    />
                 </Document>
             }
 
             {!instance.loading && (
                 <div className="mt-4 flex justify-around">
-                    <button className="btn text-sm">Preview</button>
+                    <button onClick={() => preview(instance.url)} className="btn text-sm">
+                        <span>Preview</span>
+                        <FaEye />
+                    </button>
                     <a
                         href={instance.url}
                         download={`${resumeData.contact?.name || 'resume'}.pdf`}
