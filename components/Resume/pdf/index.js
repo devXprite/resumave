@@ -171,25 +171,27 @@ const Certificaes = ({ data }) => (
     </Section>
 );
 
-
 const Languages = ({ data }) => (
     <Section title={'Languages'}>
-        {data.map(({ language, level }, i) => (
-            <View key={i} style={styles?.wrappper}>
-                <View style={styles.title_wrapper}>
-                    <Text style={styles.title}>{language}</Text>
-                    <Text style={styles.date}>{level}</Text>
+        <View
+            style={{
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+            }}
+        >
+            {data.map(({ language, proficiency }, i) => (
+                <View key={i}>
+                    <Text style={{ fontSize: 12 }}>{language}</Text>
+                    <Text style={{ fontSize: 11, color: '#888' }}>{proficiency}</Text>
                 </View>
-                {i !== data.length - 1 && <View style={styles.line} />}
-            </View>
-        ))}
+            ))}
+        </View>
     </Section>
 );
 
-
-
 const Resume = ({ data }) => {
-    const { contact, education, experience, projects, summary, skills, certificates , languages} = data;
+    const { contact, education, experience, projects, summary, skills, certificates, languages } = data;
 
     return (
         <Document language="en">
@@ -207,7 +209,8 @@ const Resume = ({ data }) => {
                 {projects.length > 0 && <Projects data={projects} />}
 
                 {skills?.skills?.length > 0 && <Skills data={skills.skills} />}
-                {certificates.length > 0 && <Certificaes data={certificates} />}
+                {certificates?.length > 0 && <Certificaes data={certificates} />}
+                {languages?.length > 0 && <Languages data={languages} />}
             </Page>
         </Document>
     );

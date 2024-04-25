@@ -66,25 +66,6 @@ const styles = StyleSheet.create({
     link: {
         color: '#666',
     },
-
-    
-
-    section_title: {
-        textTransform: 'uppercase',
-        color: '#333',
-        fontSize: 13,
-    },
-
-    section_title_underline: {
-        height: 1,
-        margin: '2px 0px 4px 0px',
-        backgroundColor: '#888',
-    },
-    section_end: {
-        height: 2,
-        margin: '10px 0px',
-        backgroundColor: '#eee',
-    },
 });
 
 export default styles;
