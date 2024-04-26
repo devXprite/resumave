@@ -6,7 +6,7 @@ import ReduxProvider from '@/store/ReduxProvider';
 export const metadata = {
     metadataBase: new URL(process.env.BASE_URL),
     title: 'Free Resume Maker | Resumave',
-}
+};
 
 export default function RootLayout({ children }) {
     return (
@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
             <body>
                 <ReduxProvider>
                     <Header />
-                    <div className="mx-auto  min-h-[calc(100vh-3rem)] max-w-screen-xl ">{children}</div>
+                    <div className="mx-auto  min-h-[calc(100vh-3rem)]">{children}</div>
                 </ReduxProvider>
             </body>
         </html>

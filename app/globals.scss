@@ -6,8 +6,6 @@
 
 // import nuinto
 
-
-
 @layer base {
     body {
         @apply bg-gray-800 text-gray-200 caret-primary-400;
@@ -17,7 +15,7 @@
 
 @layer components {
     .btn {
-        @apply flex cursor-pointer justify-center items-center gap-3 rounded-md border border-gray-600 bg-gray-700 px-6 py-1.5 shadow-lg shadow-gray-900/25 hover:brightness-125;
+        @apply flex cursor-pointer items-center justify-center gap-3 rounded-md border border-gray-600 bg-gray-700 px-6 py-1.5 font-medium shadow-lg shadow-gray-900/25 hover:brightness-125 2xl:text-lg;
 
         &-filled {
             @extend .btn;
@@ -25,8 +23,8 @@
         }
     }
 
-    .card{
-        @apply rounded-md border border-gray-600 bg-gray-700/25 p-4 md:p-6 shadow-xl;
+    .card {
+        @apply rounded-md border border-gray-600 bg-gray-700/25 p-4 shadow-xl md:p-6 2xl:p-8;
     }
 }
 
@@ -41,10 +39,28 @@
     }
 }
 
-
-.tabs{
-    &::after{
-        content: "";
-        @apply absolute h-2 bottom-0 w-full left-0;
+.tabs {
+    &::after {
+        content: '';
+        @apply absolute bottom-0 left-0 h-2 w-full;
     }
+}
+
+::-webkit-scrollbar {
+
+    @apply  md:size-1.5;
+
+    &-track {
+        @apply bg-gray-700 ;
+    }
+
+    &-thumb {
+        @apply bg-primary-500 rounded-sm;
+
+        &:hover{
+            @apply bg-primary-500;
+        }
+    }
+
+
 }

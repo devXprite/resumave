@@ -39,7 +39,7 @@ const Preview = () => {
     }, [resumeData.saved]);
 
     return (
-        <div ref={parentRef} className="relative w-full max-w-[24rem]">
+        <div ref={parentRef} className="relative w-full md:max-w-[24rem] 2xl:max-w-[28rem]">
             {instance.loading ?
                 <Loader />
             :   <Document loading={<Loader />} file={instance.url}>

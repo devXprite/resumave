@@ -5,7 +5,7 @@ import Tabs from '@/components/Tabs';
 
 const page = ({ searchParams: { tab = 'contact' } }) => {
     return (
-        <div className="mt-8 flex flex-col-reverse pb-8 md:flex-row gap-10 xl:mt-8 px-2">
+        <div className="mx-auto mt-8 flex container flex-col-reverse gap-10 px-2 pb-8 md:flex-row md:mt-8 2xl:mt-14 2xl:gap-16">
             <Preview />
             <div className="flex-grow ">
                 <Tabs activeTab={tab} />

@@ -9,7 +9,7 @@ const ImgTilt = ({ props, children }) => {
             trackOnWindow={true}
             tiltReverse={true}
             glareEnable={true}
-            className={twMerge('shadow-2xl shadow-gray-900 w-44 md:w-[22rem]')}
+            className={twMerge('shadow-2xl shadow-gray-900 w-44 md:w-[22rem] 2xl:w-[25rem]')}
             {...props}
         >
             {children}

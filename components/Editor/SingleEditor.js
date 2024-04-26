@@ -25,7 +25,7 @@ const SingleEditor = ({ tab }) => {
     };
 
     return (
-        <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+        <div className="grid md:grid-cols-2 gap-4 md:gap-6 md:gap-x-8">
             {fields.map(field => (
                 <Input key={field.name} {...field} onChange={handleChange} value={resumeData?.[field?.name]} />
             ))}

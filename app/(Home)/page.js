@@ -5,12 +5,12 @@ import { IoIosRocket } from 'react-icons/io';
 
 const page = () => {
     return (
-        <div className="flex h-full min-h-[calc(100vh-3rem)] flex-col-reverse items-center justify-center gap-8 overflow-hidden px-3 py-6 text-center md:flex-row md:justify-between md:text-left">
+        <div className="mx-auto flex h-full min-h-[calc(100vh-5rem)] max-w-screen-xl flex-col-reverse items-center justify-center gap-8 overflow-hidden px-3 py-6 text-center md:flex-row md:justify-between md:text-left">
             <div className="">
                 <h4 className="text-base md:text-xl">
                     <span className="text-gradient">A Free and Open Source Resume Builder</span>
                 </h4>
-                <h1 className="text-3xl md:mt-2 md:text-[2.75rem] ">
+                <h1 className="text-3xl md:mt-2 md:text-4xl 2xl:text-[2.75rem] ">
                     <span className="text-gradient">Resume Building Made Simple</span>
                 </h1>
 
