@@ -104,9 +104,12 @@ const Projects = ({ data }) => (
                 </View>
 
                 <View style={styles.lists}>
-                    {project.description?.split('\n').map((responsibility, i) => (
-                        <ListItem key={i}>{responsibility}</ListItem>
-                    ))}
+                    {project.description
+                        ?.split('\n')
+                        .filter(line => line)
+                        .map((responsibility, i) => (
+                            <ListItem key={i}>{responsibility}</ListItem>
+                        ))}
                 </View>
 
                 {i !== data.length - 1 && <View style={styles.line} />}
@@ -183,7 +186,7 @@ const Languages = ({ data }) => (
             {data.map(({ language, proficiency }, i) => (
                 <View key={i}>
                     <Text style={{ fontSize: 12 }}>{language}</Text>
-                    <Text style={{ fontSize: 11, color: '#888' }}>{proficiency}</Text>
+                    <Text style={{ fontSize: 10, color: '#777' }}>{proficiency}</Text>
                 </View>
             ))}
         </View>

@@ -103,7 +103,7 @@ const Input = ({ label, name, type, placeholder, options, span, value, ...props 
                 >
                     {options?.map(option => (
                         <option key={option.value} value={option.value}>
-                            {option.name}
+                            {option?.name || option?.value}
                         </option>
                     ))}
                 </select>

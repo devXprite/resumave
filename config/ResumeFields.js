@@ -108,7 +108,34 @@ export default {
         multiple: true,
         fields: [
             { name: 'language', label: 'Language', placeholder: 'Language Name' },
-            { name: 'proficiency', label: 'Proficiency', placeholder: 'e.g., Fluent, Intermediate, Beginner' },
+            {
+                name: 'proficiency',
+                label: 'Proficiency',
+                placeholder: 'e.g., Fluent, Intermediate, Beginner',
+                type: 'select',
+                options: [
+                    {
+                        
+                        value: 'Elementary Proficiency',
+                    },
+                    {
+                        
+                        value: 'Limited Working Proficiency',
+                    },
+                    {
+                        
+                        value: 'Professional Working Proficiency',
+                    },
+                    {
+                        
+                        value: 'Full Professional Proficiency',
+                    },
+                    {
+                        
+                        value: 'Native or Bilingual Proficiency',
+                    },
+                ],
+            },
         ],
     },
 };
