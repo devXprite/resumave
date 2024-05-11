@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import ImgTilt from './ImgTilt';
-import { FaGithub, FaRocket } from 'react-icons/fa';
+import { FaGithub } from 'react-icons/fa';
 import { IoIosRocket } from 'react-icons/io';
 
 const page = () => {
@@ -13,13 +13,19 @@ const page = () => {
                 <h1 className="text-3xl md:mt-2 md:text-4xl 2xl:text-[2.75rem] ">
                     <span className="text-gradient">Resume Building Made Simple</span>
                 </h1>
-
-                <p className="mt-3 max-w-screen-sm text-sm text-gray-300 md:mt-10 md:text-lg">
-                    Welcome to Resumave! Making a great resume is easy here. Our tool helps you create a resume that
-                    works with job application systems.{' '}
+                {/* <p className="mt-3 max-w-screen-sm text-sm text-gray-300 md:mt-10 md:text-lg">
+                    Welcome to Resumave! Making a great resume is easy here. Our tool helps you create a ATS friendly
+                    resumes.{' '}
                     <span className="hidden md:inline">
                         It makes sure you look good to employers. Say bye-bye to resume worries and hello to Resumave.
                         Start now and get closer to your dream job!
+                    </span>
+                </p> */}
+                <p className="mt-3 max-w-screen-sm text-sm text-gray-300 md:mt-10 md:text-lg">
+                    Resumave is an ATS-friendly resume maker designed to simplify the process of creating professional
+                    <span className="hidden md:inline">
+                        resumes without the hassle of login or sign-up. With Resumave, users can easily input their
+                        details, generate a well-formatted resume, and export it in A4 PDF format.
                     </span>
                 </p>
 
@@ -37,7 +43,7 @@ const page = () => {
             </div>
             <div>
                 <ImgTilt>
-                    <img src="https://d.novoresume.com/images/doc/preview/creative-resume-template.png" />
+                    <img src="/sample.png" />
                 </ImgTilt>
             </div>
         </div>

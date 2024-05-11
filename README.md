@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<!-- ## Resumave -->
 
-## Getting Started
+<!-- Resumave is an ATS-friendly resume maker designed to simplify the process of creating professional resumes without the hassle of login or sign-up. With Resumave, users can easily input their details, generate a well-formatted resume, and export it in A4 PDF format. -->
 
-First, run the development server:
+<h1 align="center">Resumave</h1>
+<h3 align="center">An ATS-friendly resume maker</h3>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+<p align="center">
+ <a href="https://resumave.vercel.app/">View Demo</a>
+    ·
+    <a href="https://github.com/devXprite/resumave/issues/new?assignees=&labels=bug&template=bug_report.md&title=">Report Bug</a>
+</p>
+<br/>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+<p>Resumave is an ATS-friendly resume maker designed to simplify the process of creating professional resumes without the hassle of login or sign-up. With Resumave, users can easily input their details, generate a well-formatted resume, and export it in A4 PDF format. </p>
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## Features
 
-To learn more about Next.js, take a look at the following resources:
+- **ATS-Friendly:** Ensures compatibility with Applicant Tracking Systems (ATS) commonly used by recruiters.
+- **User-Friendly Interface:** simple and intuitive interface for easy navigation and data input.
+- **No Login Required:** Users can access all features without the need for registration or authentication.
+- **PDF Export:** Generate resumes in A4 PDF format for easy printing and sharing.
+- **Persistent Data:** Utilizes local storage to save user data, preventing loss when the browser is closed.
+- **Responsive Design:** It's designed to be responsive, ensuring a seamless experience across various devices and screen sizes.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Technologies Used
+- **Next.js:** A React framework for building server-side rendered and static web applications.
+- **Tailwind CSS:** A utility-first CSS framework for creating custom designs with ease.
+- **Redux:** A predictable state container for managing application state.
+- **React PDF:** A library for creating PDFs using React components.
 
-## Deploy on Vercel
+## Screenshots
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<img src="./public/screenshots/2.png" width="75%" />
+<img src="./public/screenshots/3.png" width="75%" />
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Installation
+If you want to run Resumave locally, follow these steps:
+
+1. Clone the repository:
+   ```bash
+    git clone https://github.com/devxprite/resumave.git
+   ```
+
+2. Navigate to the project directory:
+    ```bash
+    cd resumave
+    ```
+3. Install dependencies:
+    ```bash
+    npm install
+    ```
+4. Start the development server:
+    ```bash
+    npm run dev
+    ```
+5. Open your browser and visit `http://localhost:3000`
+   
+
+
+## Contributing
+Contributions are welcome! If you encounter any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.
+
+
+## Usage
+To use Resumave, simply visit [resumave.vercel.app](https://resumave.vercel.app) and start filling out your details. Once complete, you can export your resume in PDF format.
+
+## License
+This project is licensed under the MIT License. see the LICENSE file for details.
