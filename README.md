@@ -34,8 +34,8 @@
 
 ## Screenshots
 
+<img src="./public/screenshots/1.png" width="75%" />
 <img src="./public/screenshots/2.png" width="75%" />
-<img src="./public/screenshots/3.png" width="75%" />
 
 ## Installation
 If you want to run Resumave locally, follow these steps:
