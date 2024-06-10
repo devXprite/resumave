@@ -39,7 +39,7 @@ const Preview = () => {
         if (resumeData.saved) {
             updateInstance(document);
             // Check if the resumeData has required fields filled
-            if (!resumeData.contact || !resumeData.contact.name || !resumeData.experience || resumeData.experience.length === 0) {
+            if (!resumeData.contact || !resumeData.contact.name || !resumeData.projects || resumeData.projects.length === 0) {
                 setIsEmpty(true);
             } else {
                 setIsEmpty(false);
