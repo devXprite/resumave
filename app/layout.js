@@ -13,7 +13,7 @@ export const metadata = {
         title: 'Resumave',
         images: `/banner.png`,
         icons: {
-            icon: `/favicon.png`,
+            icon: `/logoResumave.png`,
         },
         type: 'website',
     },
@@ -25,6 +25,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
+            <head>
+                <link rel="icon" href="/logoResumave.ico"  />
+            </head>
             <body>
                 <ReduxProvider>
                     <Header />
