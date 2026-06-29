@@ -48,8 +48,8 @@ export default {
             { name: 'role', label: 'Title / Position', span: true, placeholder: 'Software Engineer' },
             { name: 'company', label: 'Workplace / Company', placeholder: 'Company Name' },
             { name: 'location', label: 'Location', placeholder: 'City, Country' },
-            { name: 'start', label: 'Start Date', type: 'month', placeholder: 'MM/DD/YYYY' },
-            { name: 'end', label: 'End Date', type: 'month', placeholder: 'MM/DD/YYYY' },
+            { name: 'start', label: 'Start Date', type: 'month', placeholder: 'MM/YYYY' },
+            { name: 'end', label: 'End Date', type: 'month-current', placeholder: 'MM/YYYY' },
             {
                 name: 'description',
                 label: 'Responsibility',
@@ -99,7 +99,7 @@ export default {
         fields: [
             { name: 'title', label: 'Certificate Title', placeholder: 'Certificate Name', span: true },
             { name: 'issuer', label: 'Issuing Organization', placeholder: 'Organization Name' },
-            { name: 'date', label: 'Issuance Date', type: 'month', placeholder: 'MM/DD/YYYY' },
+            { name: 'date', label: 'Issuance Date', type: 'month', placeholder: 'MM/YYYY' },
         ],
     },
 

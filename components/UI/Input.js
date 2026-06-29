@@ -110,6 +110,41 @@ const Input = ({ label, name, type, placeholder, options, span, value, ...props 
             );
         }
 
+        if (type === 'month-current') {
+            const { onChange } = props;
+            const isPresent = value === 'Present';
+            return (
+                <div className="space-y-2">
+                    <input
+                        type="month"
+                        name={name}
+                        id={name}
+                        className={inputClassName}
+                        placeholder={placeholder}
+                        value={isPresent ? '' : value || ''}
+                        disabled={isPresent}
+                        onChange={onChange}
+                    />
+                    <label className="flex items-center gap-2 cursor-pointer text-sm text-gray-300">
+                        <input
+                            type="checkbox"
+                            checked={isPresent}
+                            onChange={e => {
+                                onChange({
+                                    target: {
+                                        name,
+                                        value: e.target.checked ? 'Present' : '',
+                                    },
+                                });
+                            }}
+                            className="rounded border-gray-600 bg-gray-700 text-primary-500 focus:ring-primary-500"
+                        />
+                        Currently working here
+                    </label>
+                </div>
+            );
+        }
+
         if (type == 'color') {
             return (
                 <input

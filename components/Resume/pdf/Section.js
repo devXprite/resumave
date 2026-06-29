@@ -1,3 +1,5 @@
+'use client';
+
 import { StyleSheet, Text, View } from '@react-pdf/renderer';
 
 const Section = ({ title, style, children }) => {

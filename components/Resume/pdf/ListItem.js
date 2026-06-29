@@ -1,3 +1,5 @@
+'use client';
+
 import { Text, View, StyleSheet } from '@react-pdf/renderer';
 
 const ListItem = ({ children }) => {

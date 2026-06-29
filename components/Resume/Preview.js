@@ -12,8 +12,6 @@ import { usePDF } from '@react-pdf/renderer';
 import { Document, Page, pdfjs } from 'react-pdf';
 import { FaDownload, FaEye } from 'react-icons/fa6';
 
-pdfjs.GlobalWorkerOptions.workerSrc = new URL('pdfjs-dist/build/pdf.worker.min.js', import.meta.url).toString();
-
 const Loader = () => (
     <div className="flex min-h-96 w-full items-center justify-center">
         <CgSpinner className="mx-auto mt-16 animate-spin text-center text-4xl text-primary-400 md:text-5xl" />
@@ -33,6 +31,10 @@ const Preview = () => {
     const resumeData = useSelector(state => state.resume);
     const document = <Resume data={resumeData} />;
     const [instance, updateInstance] = usePDF({ document });
+
+    useEffect(() => {
+        pdfjs.GlobalWorkerOptions.workerSrc = new URL('pdfjs-dist/build/pdf.worker.min.js', import.meta.url).toString();
+    }, []);
 
     useEffect(() => {
         if (resumeData.saved) updateInstance(document);
